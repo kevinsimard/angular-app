@@ -1,0 +1,15 @@
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+RewriteEngine on
+
+# don't rewrite resource files
+RewriteCond %{REQUEST_URI} !^/?assets/
+
+# don't rewrite existing files or directories
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# rewrite everything else to index
+RewriteRule ^ index.html [L]
