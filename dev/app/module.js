@@ -2,7 +2,8 @@
     'use strict';
 
     angular.module('app', [
-        'ui.router'
+        'ui.router',
+        'mlang'
     ]);
 
     angular.element(document)
