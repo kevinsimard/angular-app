@@ -10,12 +10,12 @@
 
     function config($stateProvider) {
         $stateProvider.state('index', {
-            'abstract': true,
-            'url': ''
+            'url': '/',
+            'abstract': true
         });
 
         $stateProvider.state('index.index', {
-            'url': '/',
+            'url': '',
             'views': {
                 '@': {
                     'controllerAs': 'vm', 'controller': 'index.index',
