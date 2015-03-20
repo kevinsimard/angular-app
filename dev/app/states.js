@@ -15,5 +15,8 @@
 
         // fix internet explorer 9
         $urlRouterProvider.when('', '/');
+
+        // redirect 404 page not found
+        $urlRouterProvider.otherwise('/');
     }
 })(angular);
