@@ -11,7 +11,7 @@
 
     // development environment(s)
     gulp.task('dev', function () {
-        //
+        runSequence('constant:generate');
     });
 
     // list all available tasks

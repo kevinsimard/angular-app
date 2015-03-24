@@ -1,8 +1,12 @@
 {
     "dependencies": {
         "gulp": "3.8.*",
+        "gulp-ejs": "1.1.*",
+        "gulp-rename": "1.2.*",
         "gulp-task-listing": "1.0.*",
         "require-dir": "0.3.*",
-        "run-sequence": "1.0.*"
+        "run-sequence": "1.0.*",
+        "underscore": "1.8.*",
+        "yargs": "3.6.*"
     }
 }
