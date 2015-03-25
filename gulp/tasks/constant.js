@@ -8,6 +8,11 @@
         argv = require('yargs').argv,
         rename = require('gulp-rename');
 
+    if ( !! argv.watch) {
+        gulp.watch(['.env.json', '.env.*.json'],
+            ['constant:generate']);
+    }
+
     gulp.task('constant:generate', function () {
         var constants = getConstants(argv.env);
 
