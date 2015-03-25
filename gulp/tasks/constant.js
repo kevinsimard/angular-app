@@ -1,15 +1,15 @@
 (function (require) {
     'use strict';
 
-    var gulp = require('gulp'),
+    var fs = require('fs'),
+        gulp = require('gulp'),
         _ = require('underscore'),
         ejs = require('gulp-ejs'),
         argv = require('yargs').argv,
         rename = require('gulp-rename');
 
     gulp.task('constant:generate', function () {
-        var env = argv.env || 'local',
-            constants = getConstants(env);
+        var constants = getConstants(argv.env);
 
         gulp.src('gulp/tasks/stubs/constant.ejs')
             .pipe(ejs({ 'constants': constants }))
@@ -18,17 +18,21 @@
     });
 
     function getConstants(env) {
-        var constants = require('../../.env.json');
+        var constants = readJsonFileSync('.env.json'),
+            envFile = ['.env.', env, '.json'].join('');
 
-        try {
-            // merge values if environment file exists
-            // e.g: .env.local.json, .env.live.json ...
-            constants = _.extend(constants, require(
-                ['../../.env.', env, '.json'].join('')));
-        } catch (exception) {}
+        if (fs.exists(envFile)) {
+            constants = _.extend(constants,
+                readJsonFileSync(envFile));
+        }
 
         return _.map(constants, function (value, key) {
             return { 'key': key, 'value': JSON.stringify(value) };
         });
+    }
+
+    function readJsonFileSync(file, encoding) {
+        return JSON.parse(fs.readFileSync(
+            file, encoding || 'utf8'));
     }
 })(require);
