@@ -7,6 +7,16 @@
         historyApiFallback = require('connect-history-api-fallback');
 
     gulp.task('browsersync:serve', function () {
+        runTask();
+
+        if ( !! argv.watch) {
+            gulp.watch('dev/assets/styles/**/*.css', browserSync.reload);
+            gulp.watch(['dev/index.html', 'dev/app/**/*.tpl'], browserSync.reload);
+            gulp.watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
+        }
+    });
+
+    function runTask() {
         browserSync({
             'notify': true,
             'port': '5000',
@@ -16,11 +26,5 @@
                 'middleware': [historyApiFallback]
             }
         });
-
-        if ( !! argv.watch) {
-            gulp.watch('dev/assets/styles/**/*.css', browserSync.reload);
-            gulp.watch(['dev/index.html', 'dev/app/**/*.tpl'], browserSync.reload);
-            gulp.watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
-        }
-    });
+    }
 })(require);

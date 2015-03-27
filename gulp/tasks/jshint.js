@@ -7,6 +7,15 @@
         jshintStylish = require('jshint-stylish');
 
     gulp.task('jshint:validate', function () {
+        if ( !! argv.watch) {
+            gulp.watch([
+                'dev/app/**/*.js',
+                'dev/assets/scripts/**/*.js'
+            ], runTask);
+        }
+    });
+
+    function runTask() {
         var sources = [
             'dev/app/**/*.js',
             '!dev/app/constants.js',
@@ -16,12 +25,5 @@
         gulp.src(sources)
             .pipe(jshint())
             .pipe(jshint.reporter(jshintStylish));
-
-        if ( !! argv.watch) {
-            gulp.watch([
-                'dev/app/**/*.js',
-                'dev/assets/scripts/**/*.js'
-            ], ['jshint:validate']);
-        }
-    });
+    }
 })(require);

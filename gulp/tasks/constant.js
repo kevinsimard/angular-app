@@ -9,18 +9,21 @@
         rename = require('gulp-rename');
 
     gulp.task('constant:generate', function () {
+        runTask();
+
+        if ( !! argv.watch) {
+            gulp.watch(['.env.json', '.env.*.json'], runTask);
+        }
+    });
+
+    function runTask() {
         var constants = getConstants(argv.env);
 
         gulp.src('gulp/tasks/stubs/constant.ejs')
             .pipe(ejs({ 'constants': constants }))
             .pipe(rename('constants.js'))
             .pipe(gulp.dest('dev/app/'));
-
-        if ( !! argv.watch) {
-            gulp.watch(['.env.json', '.env.*.json'],
-                ['constant:generate']);
-        }
-    });
+    }
 
     function getConstants(env) {
         var constants = readJsonFileSync('.env.json'),
