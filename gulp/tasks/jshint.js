@@ -6,13 +6,6 @@
         jshint = require('gulp-jshint'),
         jshintStylish = require('jshint-stylish');
 
-    if ( !! argv.watch) {
-        gulp.watch([
-            'dev/app/**/*.js',
-            'dev/assets/scripts/**/*.js'
-        ], ['jshint:validate']);
-    }
-
     gulp.task('jshint:validate', function () {
         var sources = [
             'dev/app/**/*.js',
@@ -23,5 +16,12 @@
         gulp.src(sources)
             .pipe(jshint())
             .pipe(jshint.reporter(jshintStylish));
+
+        if ( !! argv.watch) {
+            gulp.watch([
+                'dev/app/**/*.js',
+                'dev/assets/scripts/**/*.js'
+            ], ['jshint:validate']);
+        }
     });
 })(require);
