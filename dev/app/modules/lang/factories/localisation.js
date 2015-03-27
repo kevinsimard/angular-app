@@ -32,7 +32,7 @@
                 locale = constants.locale;
             }
 
-            return promise = $translate.use(locale);
+            return (promise = $translate.use(locale));
         }
 
         function getLocale() {
