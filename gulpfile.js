@@ -13,7 +13,8 @@
     gulp.task('dev', function () {
         runSequence(
             'constant:generate',
-            'browsersync:serve'
+            'browsersync:serve',
+            'jshint:validate'
         );
     });
 
