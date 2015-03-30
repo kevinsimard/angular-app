@@ -3,12 +3,13 @@
 
     var gulp = require('gulp'),
         argv = require('yargs').argv,
+        watch = require('gulp-watch'),
         jshint = require('gulp-jshint'),
         jshintStylish = require('jshint-stylish');
 
     gulp.task('jshint:validate', function () {
         if ( !! argv.watch) {
-            gulp.watch([
+            watch([
                 'dev/app/**/*.js',
                 'dev/assets/scripts/**/*.js'
             ], runTask);

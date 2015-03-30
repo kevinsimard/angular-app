@@ -6,13 +6,14 @@
         _ = require('underscore'),
         ejs = require('gulp-ejs'),
         argv = require('yargs').argv,
+        watch = require('gulp-watch'),
         rename = require('gulp-rename');
 
     gulp.task('constant:generate', function () {
         runTask();
 
         if ( !! argv.watch) {
-            gulp.watch(['.env.json', '.env.*.json'], runTask);
+            watch(['.env.json', '.env.*.json'], runTask);
         }
     });
 

@@ -3,6 +3,7 @@
 
     var gulp = require('gulp'),
         argv = require('yargs').argv,
+        watch = require('gulp-watch'),
         browserSync = require('browser-sync'),
         historyApiFallback = require('connect-history-api-fallback');
 
@@ -10,9 +11,9 @@
         runTask();
 
         if ( !! argv.watch) {
-            gulp.watch('dev/assets/styles/**/*.css', browserSync.reload);
-            gulp.watch(['dev/index.html', 'dev/app/**/*.tpl'], browserSync.reload);
-            gulp.watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
+            watch('dev/assets/styles/**/*.css', browserSync.reload);
+            watch(['dev/index.html', 'dev/app/**/*.tpl'], browserSync.reload);
+            watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
         }
     });
 
