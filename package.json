@@ -13,5 +13,10 @@
         "run-sequence": "1.0.*",
         "underscore": "1.8.*",
         "yargs": "3.6.*"
+    },
+    "devDependencies": {
+        "karma": "0.12.*",
+        "karma-jasmine": "0.3.*",
+        "karma-phantomjs-launcher": "0.1.*"
     }
 }
