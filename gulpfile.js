@@ -7,7 +7,7 @@
         taskListing = require('gulp-task-listing');
 
     // register all tasks
-    requireDir('./gulp/tasks');
+    requireDir('./gulp/tasks/');
 
     // development environment(s)
     gulp.task('dev', function () {
