@@ -19,7 +19,6 @@
 
     function runTask() {
         browserSync({
-            'notify': true,
             'port': '5000',
             'ui': { 'port': '5001' },
             'server': {
