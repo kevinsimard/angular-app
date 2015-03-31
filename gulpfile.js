@@ -19,6 +19,16 @@
         );
     });
 
+    // staging/live environments
+    gulp.task('www', function () {
+        runSequence(
+            'copy:www',
+            ['constant:generate',
+            'template:generate'],
+            'jshint:validate'
+        );
+    });
+
     // list all available tasks
     gulp.task('default', taskListing);
     gulp.task('help', taskListing);
