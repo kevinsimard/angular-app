@@ -1,0 +1,14 @@
+(function (angular) {
+    'use strict';
+
+    angular.module('app')
+        .run(run);
+
+    run.$inject = [
+        '$templateCache'
+    ];
+
+    function run($templateCache) {<% templates.forEach(function (template) { %>
+        $templateCache.put('<%- template.file %>', '<%- template.contents %>');<% }); %>
+    }
+})(angular);

@@ -12,7 +12,8 @@
     // development environment(s)
     gulp.task('dev', function () {
         runSequence(
-            'constant:generate',
+            ['constant:generate',
+            'template:generate'],
             'browsersync:serve',
             'jshint:validate'
         );

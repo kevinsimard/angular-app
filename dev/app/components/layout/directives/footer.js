@@ -10,7 +10,7 @@
         return {
             'link': link,
             'restrict': 'AE',
-            'templateUrl': '/app/components/layout/templates/footer.tpl'
+            'templateUrl': 'components/layout/templates/footer.tpl'
         };
 
         function link(scope, element, attrs) {

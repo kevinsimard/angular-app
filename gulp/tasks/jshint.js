@@ -20,6 +20,7 @@
         var sources = [
             'dev/app/**/*.js',
             '!dev/app/constants.js',
+            '!dev/app/templates.js',
             'dev/assets/scripts/**/*.js'
         ];
 

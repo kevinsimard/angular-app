@@ -10,7 +10,7 @@
         return {
             'link': link,
             'restrict': 'AE',
-            'templateUrl': '/app/components/layout/templates/header.tpl'
+            'templateUrl': 'components/layout/templates/header.tpl'
         };
 
         function link(scope, element, attrs) {

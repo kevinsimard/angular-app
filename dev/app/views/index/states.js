@@ -19,7 +19,7 @@
             'views': {
                 '@': {
                     'controllerAs': 'vm', 'controller': 'index.index',
-                    'templateUrl': '/app/views/index/templates/index.tpl'
+                    'templateUrl': 'views/index/templates/index.tpl'
                 }
             }
         });
