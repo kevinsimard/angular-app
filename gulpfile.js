@@ -25,7 +25,8 @@
             'copy:www',
             ['constant:generate',
             'template:generate'],
-            'jshint:validate'
+            'jshint:validate',
+            'minify:www'
         );
     });
 

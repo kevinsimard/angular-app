@@ -11,12 +11,15 @@
         <title translate="page.title" translate-default=""></title>
         <meta name="description" translate translate-attr-content="page.description" translate-default="">
 
+        <!-- build:jsVendors assets/scripts/vendors.min.js -->
         <script src="vendors/angular/angular.js"></script>
         <script src="vendors/angular-translate/angular-translate.js"></script>
         <script src="vendors/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
         <script src="vendors/ui-router/release/angular-ui-router.js"></script>
         <script src="vendors/underscore/underscore.js"></script>
+        <!-- endbuild -->
 
+        <!-- build:jsApp assets/scripts/app.min.js -->
         <script src="app/module.js"></script>
         <script src="app/constants.js"></script>
         <script src="app/templates.js"></script>
@@ -32,6 +35,7 @@
 
         <script src="app/views/index/states.js"></script>
         <script src="app/views/index/controllers/index.js"></script>
+        <!-- endbuild -->
     </head>
     <body>
         <ui-header></ui-header>
