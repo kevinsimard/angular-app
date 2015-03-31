@@ -9,10 +9,7 @@
 
     gulp.task('jshint:validate', function () {
         if ( !! argv.watch) {
-            watch([
-                'dev/app/**/*.js',
-                'dev/assets/scripts/**/*.js'
-            ], runTask);
+            watch('dev/app/**/*.js', runTask);
         }
     });
 
@@ -20,8 +17,7 @@
         var sources = [
             'dev/app/**/*.js',
             '!dev/app/constants.js',
-            '!dev/app/templates.js',
-            'dev/assets/scripts/**/*.js'
+            '!dev/app/templates.js'
         ];
 
         gulp.src(sources)
