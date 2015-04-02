@@ -22,10 +22,10 @@
     // staging/live environments
     gulp.task('www', function () {
         runSequence(
-            'copy:www',
             ['constant:generate',
             'template:generate'],
             'jshint:validate',
+            'copy:www',
             'minify:www'
         );
     });
