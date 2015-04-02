@@ -9,5 +9,9 @@ install:
     - npm install
     - bower install
 
+before_script:
+    - gulp constant:generate -env=testing
+    - gulp template:generate -env=testing
+
 script:
     - karma start
