@@ -3,22 +3,24 @@
 
     var gulp = require('gulp'),
         argv = require('yargs').argv,
-        watch = require('gulp-watch'),
-        browserSync = require('browser-sync'),
-        historyApiFallback = require('connect-history-api-fallback');
+        plugins = require('gulp-load-plugins')();
 
     gulp.task('browsersync:serve', function () {
-        runTask();
+        var browserSync = task();
 
         if ( !! argv.watch) {
-            watch('dev/index.html', browserSync.reload);
-            watch('dev/assets/styles/**/*.css', browserSync.reload);
-            watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
+            plugins.watch('dev/index.html', browserSync.reload);
+            plugins.watch('dev/assets/styles/**/*.css', browserSync.reload);
+            plugins.watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
         }
     });
 
-    function runTask() {
-        browserSync({
+    function task() {
+        var browserSync = require('browser-sync'),
+            historyApiFallback = require('connect-history-api-fallback');
+
+        return browserSync({
+            'open': false,
             'port': '5000',
             'ui': { 'port': '5001' },
             'server': {
