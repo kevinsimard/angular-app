@@ -2,25 +2,20 @@
     'use strict';
 
     var gulp = require('gulp'),
-        rev = require('gulp-rev'),
-        usemin = require('gulp-usemin'),
-        uglify = require('gulp-uglify'),
-        minifyCss = require('gulp-minify-css');
+        plugins = require('gulp-load-plugins')();
 
-    gulp.task('minify:www', function () {
-        runTask();
-    });
+    gulp.task('minify:www', task);
 
-    function runTask() {
+    function task() {
         var options = {
-            'jsApp': [uglify(), rev()],
-            'jsVendors': [uglify(), rev()],
-            'cssApp': [minifyCss, 'concat', rev()],
-            'cssVendors': [minifyCss, 'concat', rev()]
+            'jsApp': [plugins.uglify(), plugins.rev()],
+            'jsVendors': [plugins.uglify(), plugins.rev()],
+            'cssApp': [plugins.minifyCss(), 'concat', plugins.rev()],
+            'cssVendors': [plugins.minifyCss(), 'concat', plugins.rev()]
         };
 
         gulp.src('dev/index.html')
-            .pipe(usemin(options))
+            .pipe(plugins.usemin(options))
             .pipe(gulp.dest('www/'));
     }
 })(require);
