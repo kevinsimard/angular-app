@@ -4,11 +4,9 @@
     var del = require('del'),
         gulp = require('gulp');
 
-    gulp.task('copy:www', function () {
-        runTask();
-    });
+    gulp.task('copy:www', task);
 
-    function runTask() {
+    function task() {
         del('www/*', function () {
             gulp.src('dev/*.*')
                 .pipe(gulp.dest('www/'));
