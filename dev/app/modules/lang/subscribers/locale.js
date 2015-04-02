@@ -6,19 +6,19 @@
 
     run.$inject = [
         '$rootScope',
-        'mlang.localisation'
+        'mlang.translate'
     ];
 
-    function run($rootScope, localisation) {
+    function run($rootScope, translate) {
         $rootScope.$on('$stateChangeSuccess',
             function (event, toState, toParams, fromState, fromParams) {
                 var locale = toParams._locale,
                     toPart = _.first(toState.name.split('.')),
                     fromPart = _.first(fromState.name.split('.'));
 
-                localisation.setLocale(locale);
-                localisation.add(toPart);
-                localisation.remove(fromPart);
+                translate.setLocale(locale);
+                translate.add(toPart);
+                translate.remove(fromPart);
             });
     }
 })(angular, _);

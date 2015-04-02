@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('mlang')
-        .factory('mlang.localisation', factory);
+        .factory('mlang.translate', factory);
 
     factory.$inject = [
         '$timeout',
