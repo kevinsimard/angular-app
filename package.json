@@ -1,7 +1,5 @@
 {
     "dependencies": {
-        "browser-sync": "2.5.*",
-        "connect-history-api-fallback": "0.0.*",
         "del": "1.1.*",
         "event-stream": "3.3.*",
         "gulp": "3.8.*",
@@ -16,6 +14,9 @@
         "gulp-usemin": "0.3.*",
         "gulp-watch": "4.2.*",
         "jshint-stylish": "1.0.*",
+        "karma": "0.12.*",
+        "karma-jasmine": "0.3.*",
+        "karma-phantomjs-launcher": "0.1.*",
         "q": "1.2.*",
         "require-dir": "0.3.*",
         "run-sequence": "1.0.*",
@@ -23,8 +24,7 @@
         "yargs": "3.6.*"
     },
     "devDependencies": {
-        "karma": "0.12.*",
-        "karma-jasmine": "0.3.*",
-        "karma-phantomjs-launcher": "0.1.*"
+        "browser-sync": "2.5.*",
+        "connect-history-api-fallback": "0.0.*"
     }
 }
