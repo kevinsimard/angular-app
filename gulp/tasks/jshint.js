@@ -3,17 +3,18 @@
 
     var gulp = require('gulp'),
         argv = require('yargs').argv,
-        watch = require('gulp-watch'),
-        jshint = require('gulp-jshint'),
+        plugins = require('gulp-load-plugins')(),
         jshintStylish = require('jshint-stylish');
 
     gulp.task('jshint:validate', function () {
+        task();
+
         if ( !! argv.watch) {
-            watch('dev/app/**/*.js', runTask);
+            plugins.watch('dev/app/**/*.js', task);
         }
     });
 
-    function runTask() {
+    function task() {
         var sources = [
             'dev/app/**/*.js',
             '!dev/app/constants.js',
@@ -21,7 +22,7 @@
         ];
 
         gulp.src(sources)
-            .pipe(jshint())
-            .pipe(jshint.reporter(jshintStylish));
+            .pipe(plugins.jshint())
+            .pipe(plugins.jshint.reporter(jshintStylish));
     }
 })(require);
