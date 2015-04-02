@@ -5,5 +5,12 @@ before_install:
     - npm install -g bower
     - npm install -g karma-cli
 
+install:
+    - npm install --production
+    - bower install --production
+
+before_script:
+    - gulp www -env=testing
+
 script:
     - karma start
