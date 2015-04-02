@@ -3,27 +3,24 @@
 
     var Q = require('q'),
         gulp = require('gulp'),
-        ejs = require('gulp-ejs'),
         es = require('event-stream'),
         argv = require('yargs').argv,
-        watch = require('gulp-watch'),
-        rename = require('gulp-rename'),
-        minifyHtml = require('gulp-minify-html');
+        plugins = require('gulp-load-plugins')();
 
     gulp.task('template:generate', function () {
         if ( !! argv.watch) {
-            watch('dev/app/**/*.tpl', runTask);
+            plugins.watch('dev/app/**/*.tpl', task);
         }
 
-        return runTask();
+        return task();
     });
 
-    function runTask() {
+    function task() {
         return getTemplates()
             .then(function (templates) {
-                gulp.src('gulp/tasks/stubs/template.ejs')
-                    .pipe(ejs({ 'templates': templates }))
-                    .pipe(rename('templates.js'))
+                return gulp.src('gulp/tasks/stubs/template.ejs')
+                    .pipe(plugins.ejs({ 'templates': templates }))
+                    .pipe(plugins.rename('templates.js'))
                     .pipe(gulp.dest('dev/app/'));
             });
     }
@@ -33,18 +30,21 @@
             deferred = Q.defer();
 
         gulp.src('dev/app/**/*.tpl')
-            .pipe(minifyHtml({ 'empty': true }))
-            .pipe(es.map(function (file, callback) {
+            .pipe(plugins.minifyHtml({ 'empty': true }))
+            .pipe(stream()).on('end', function () {
+                deferred.resolve(templates);
+            });
+
+        function stream() {
+            return es.map(function (file, callback) {
                 templates.push({
                     'file': file.relative,
                     'contents': file.contents.toString()
                 });
 
                 callback();
-            }))
-            .on('end', function () {
-                deferred.resolve(templates);
             });
+        }
 
         return deferred.promise;
     }
