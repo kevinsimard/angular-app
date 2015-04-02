@@ -6,8 +6,8 @@ before_install:
     - npm install -g karma-cli
 
 install:
-    - npm install --production
-    - bower install --production
+    - npm install
+    - bower install
 
 before_script:
     - gulp www -env=testing
