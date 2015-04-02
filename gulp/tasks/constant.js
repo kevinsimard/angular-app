@@ -7,21 +7,22 @@
         argv = require('yargs').argv,
         plugins = require('gulp-load-plugins')();
 
-    gulp.task('constant:generate', function () {
-        task();
+    gulp.task('constant:generate', function (callback) {
+        task(callback);
 
         if ( !! argv.watch) {
             plugins.watch(['.env.json', '.env.*.json'], task);
         }
     });
 
-    function task() {
+    function task(callback) {
         var constants = getConstants(argv.env);
 
         gulp.src('gulp/tasks/stubs/constant.ejs')
             .pipe(plugins.ejs({ 'constants': constants }))
             .pipe(plugins.rename('constants.js'))
-            .pipe(gulp.dest('dev/app/'));
+            .pipe(gulp.dest('dev/app/'))
+            .on('end', callback);
     }
 
     function getConstants(env) {

@@ -10,23 +10,25 @@
     requireDir('./gulp/tasks/');
 
     // development environment(s)
-    gulp.task('dev', function () {
+    gulp.task('dev', function (callback) {
         runSequence(
             ['constant:generate',
             'template:generate'],
             'browsersync:serve',
-            'jshint:validate'
+            'jshint:validate',
+            callback
         );
     });
 
     // staging/live environments
-    gulp.task('www', function () {
+    gulp.task('www', function (callback) {
         runSequence(
             ['constant:generate',
             'template:generate'],
             'jshint:validate',
             'copy:www',
-            'minify:www'
+            'minify:www',
+            callback
         );
     });
 

@@ -6,7 +6,7 @@
 
     gulp.task('minify:www', task);
 
-    function task() {
+    function task(callback) {
         var options = {
             'jsApp': [plugins.uglify(), plugins.rev()],
             'jsVendors': [plugins.uglify(), plugins.rev()],
@@ -16,6 +16,7 @@
 
         gulp.src('dev/index.html')
             .pipe(plugins.usemin(options))
-            .pipe(gulp.dest('www/'));
+            .pipe(gulp.dest('www/'))
+            .on('end', callback);
     }
 })(require);

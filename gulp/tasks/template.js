@@ -7,21 +7,22 @@
         argv = require('yargs').argv,
         plugins = require('gulp-load-plugins')();
 
-    gulp.task('template:generate', function () {
+    gulp.task('template:generate', function (callback) {
+        task(callback);
+
         if ( !! argv.watch) {
             plugins.watch('dev/app/**/*.tpl', task);
         }
-
-        return task();
     });
 
-    function task() {
-        return getTemplates()
+    function task(callback) {
+        getTemplates()
             .then(function (templates) {
-                return gulp.src('gulp/tasks/stubs/template.ejs')
+                gulp.src('gulp/tasks/stubs/template.ejs')
                     .pipe(plugins.ejs({ 'templates': templates }))
                     .pipe(plugins.rename('templates.js'))
-                    .pipe(gulp.dest('dev/app/'));
+                    .pipe(gulp.dest('dev/app/'))
+                    .on('end', callback);
             });
     }
 
@@ -31,7 +32,8 @@
 
         gulp.src('dev/app/**/*.tpl')
             .pipe(plugins.minifyHtml({ 'empty': true }))
-            .pipe(stream()).on('end', function () {
+            .pipe(stream())
+            .on('end', function () {
                 deferred.resolve(templates);
             });
 
