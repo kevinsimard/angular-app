@@ -9,8 +9,5 @@ install:
     - npm install
     - bower install
 
-before_script:
-    - gulp www -env=testing
-
 script:
     - karma start
