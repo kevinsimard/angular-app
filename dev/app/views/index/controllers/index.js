@@ -7,7 +7,6 @@
     controller.$inject = [];
 
     function controller() {
-        /* jshint validthis: true */
-        var vm = this;
+        //
     }
 })(angular);
