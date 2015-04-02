@@ -7,8 +7,8 @@
     gulp.task('copy:www', task);
 
     function task() {
-        del('www/*', function () {
-            gulp.src('dev/*.*')
+        del(['www/*', 'www/.*', '!www/.gitignore'], function () {
+            gulp.src(['dev/*.*', 'dev/.*', '!dev/.gitignore'])
                 .pipe(gulp.dest('www/'));
 
             gulp.src('dev/assets/**/*')
