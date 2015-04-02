@@ -21,12 +21,11 @@
     });
 
     // staging/live environments
-    gulp.task('www', function (callback) {
+    gulp.task('www', ['copy:www'], function (callback) {
         runSequence(
             ['constant:generate',
             'template:generate'],
             'jshint:validate',
-            'copy:www',
             'minify:www',
             callback
         );
