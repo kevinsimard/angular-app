@@ -18,7 +18,7 @@
             'url': '',
             'views': {
                 '@': {
-                    'controllerAs': 'vm', 'controller': 'index.index',
+                    'controller': 'index.index',
                     'templateUrl': 'views/index/templates/index.tpl'
                 }
             }
