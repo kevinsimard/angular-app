@@ -4,25 +4,23 @@
     var fs = require('fs'),
         gulp = require('gulp'),
         _ = require('underscore'),
-        ejs = require('gulp-ejs'),
         argv = require('yargs').argv,
-        watch = require('gulp-watch'),
-        rename = require('gulp-rename');
+        plugins = require('gulp-load-plugins')();
 
     gulp.task('constant:generate', function () {
-        runTask();
+        task();
 
         if ( !! argv.watch) {
-            watch(['.env.json', '.env.*.json'], runTask);
+            plugins.watch(['.env.json', '.env.*.json'], task);
         }
     });
 
-    function runTask() {
+    function task() {
         var constants = getConstants(argv.env);
 
         gulp.src('gulp/tasks/stubs/constant.ejs')
-            .pipe(ejs({ 'constants': constants }))
-            .pipe(rename('constants.js'))
+            .pipe(plugins.ejs({ 'constants': constants }))
+            .pipe(plugins.rename('constants.js'))
             .pipe(gulp.dest('dev/app/'));
     }
 
