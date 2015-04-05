@@ -1,5 +1,6 @@
 # AngularJS Application structure
 [![Build Status](https://img.shields.io/travis/kevinsimard/angular-app.svg)](https://travis-ci.org/kevinsimard/angular-app)
+[![Coverage Status](https://img.shields.io/coveralls/kevinsimard/angular-app.svg)](https://coveralls.io/r/kevinsimard/angular-app)
 [![Dependency Status](https://img.shields.io/david/kevinsimard/angular-app.svg)](https://david-dm.org/kevinsimard/angular-app)
 [![devDependency Status](https://img.shields.io/david/dev/kevinsimard/angular-app.svg)](https://david-dm.org/kevinsimard/angular-app#info=devDependencies)
 
