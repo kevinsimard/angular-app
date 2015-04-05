@@ -22,7 +22,7 @@
         "require-dir": "0.3.*",
         "run-sequence": "1.0.*",
         "underscore": "1.8.*",
-        "yargs": "3.6.*"
+        "yargs": "3.7.*"
     },
     "devDependencies": {
         "browser-sync": "2.5.*",
