@@ -1,5 +1,6 @@
 {
     "dependencies": {
+        "coveralls": "2.11.*",
         "del": "1.1.*",
         "event-stream": "3.3.*",
         "gulp": "3.8.*",
