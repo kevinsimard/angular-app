@@ -17,8 +17,8 @@
                     fromPart = _.first(fromState.name.split('.'));
 
                 translate.setLocale(locale);
-                translate.add(toPart);
                 translate.remove(fromPart);
+                translate.add(toPart);
             });
     }
 })(angular, _);
