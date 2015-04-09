@@ -10,6 +10,7 @@
 
         if ( !! argv.watch) {
             plugins.watch('dev/index.html', browserSync.reload);
+            plugins.watch('dev/assets/locales/**/*', browserSync.reload);
             plugins.watch('dev/assets/styles/**/*.css', browserSync.reload);
             plugins.watch(['dev/app/**/*.js', 'dev/assets/scripts/**/*.js'], browserSync.reload);
         }
