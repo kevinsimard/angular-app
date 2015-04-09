@@ -66,6 +66,11 @@
     │   ├── coverage/
     │   │   └── .gitignore
     │   └── specs/
+    │       ├── components/
+    │       │   └── layout/
+    │       │       └── directives/
+    │       │           ├── footer.js
+    │       │           └── header.js
     │       └── views/
     │           └── index/
     │               ├── controllers/
