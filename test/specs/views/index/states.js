@@ -1,4 +1,4 @@
-describe('State - index.*:', function () {
+describe('State: index', function () {
     var $rootScope, $state;
 
     beforeEach(module('app'));
@@ -23,6 +23,7 @@ describe('State - index.*:', function () {
         $state.go(state);
         $rootScope.$digest();
 
+        expect(config.url).toEqual('');
         expect($state.current.name).toBe(state);
     });
 });

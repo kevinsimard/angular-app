@@ -8,7 +8,7 @@ module.exports = function (config) {
             'dev/app/**/*.js': ['coverage']
         },
         'coverageReporter': {
-            'type': 'lcovonly',
+            'type': 'lcov',
             'dir': 'test/coverage',
             'subdir': '.'
         },
