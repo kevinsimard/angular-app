@@ -63,7 +63,14 @@
     │       ├── minify.js
     │       └── template.js
     ├── test/
-    │   └── sample.js
+    │   ├── coverage/
+    │   │   └── .gitignore
+    │   └── specs/
+    │       └── views/
+    │           └── index/
+    │               ├── controllers/
+    │               │   └── index.js
+    │               └── states.js
     ├── www/
     │   └── .gitignore
     ├── .bowerrc
