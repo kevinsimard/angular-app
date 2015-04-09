@@ -30,6 +30,7 @@
     │   │   │       │   └── index.tpl
     │   │   │       └── states.js
     │   │   ├── .gitignore
+    │   │   ├── bootstrap.js
     │   │   ├── module.js
     │   │   └── states.js
     │   ├── assets/
