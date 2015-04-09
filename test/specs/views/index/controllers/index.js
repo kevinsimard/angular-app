@@ -9,4 +9,8 @@ describe('Controller - index.index:', function () {
             '$scope': scope
         });
     }));
+
+    it('should load index.index controller', function () {
+        //
+    });
 });
