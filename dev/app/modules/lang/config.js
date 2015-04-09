@@ -30,7 +30,7 @@
         });
 
         $translateProvider.useLoader('$translatePartialLoader', {
-            'urlTemplate': '/assets/locales/{lang}/{part}.json'
+            'urlTemplate': 'assets/locales/{lang}/{part}.json'
         });
     }
 })(angular);
