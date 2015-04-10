@@ -1,10 +1,10 @@
 describe('State: index', function () {
-    var $rootScope, $state;
+    var $scope, $state;
 
     beforeEach(module('app'));
 
     beforeEach(inject(function (_$rootScope_, _$state_) {
-        $rootScope = _$rootScope_;
+        $scope = _$rootScope_;
         $state = _$state_;
     }));
 
@@ -13,7 +13,7 @@ describe('State: index', function () {
             config = $state.get(state);
 
         $state.go(state);
-        $rootScope.$digest();
+        $scope.$digest();
 
         expect(config.url).toEqual('');
         expect($state.current.name).toBe(state);
