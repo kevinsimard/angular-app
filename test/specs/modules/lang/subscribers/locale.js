@@ -16,13 +16,13 @@ describe('Subscriber: locale', function () {
     it('should add a part on $stateChangeSuccess event', function () {
         $scope.$broadcast('$stateChangeSuccess', state, {}, abstractState, {});
 
-        expect(translate.has('index')).toBeTruthy();
+        expect(translate.has(state.name)).toBeTruthy();
     });
 
     it('should remove a part on $stateChangeSuccess event', function () {
         $scope.$broadcast('$stateChangeSuccess', state, {}, abstractState, {});
         $scope.$broadcast('$stateChangeSuccess', abstractState, {}, state, {});
 
-        expect(translate.has('index')).toBeFalsy();
+        expect(translate.has(state.name)).toBeFalsy();
     });
 });
