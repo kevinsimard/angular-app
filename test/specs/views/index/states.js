@@ -9,13 +9,13 @@ describe('State: index', function () {
     }));
 
     it('should load the index.index state', function () {
-        var state = 'index.index',
-            config = $state.get(state);
+        var name = 'index.index',
+            config = $state.get(name);
 
-        $state.go(state);
+        $state.go(name);
         $scope.$digest();
 
         expect(config.url).toEqual('');
-        expect($state.current.name).toBe(state);
+        expect($state.current.name).toBe(name);
     });
 });
