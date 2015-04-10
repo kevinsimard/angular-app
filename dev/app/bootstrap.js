@@ -1,4 +1,3 @@
-/* istanbul ignore next */
 (function (angular) {
     'use strict';
 

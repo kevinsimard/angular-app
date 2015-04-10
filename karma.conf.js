@@ -12,6 +12,9 @@ module.exports = function (config) {
             'dir': 'test/coverage',
             'subdir': '.'
         },
+        'exclude': [
+            'dev/app/bootstrap.js'
+        ],
         'files': [
             'dev/vendors/angular/angular.js',
             'dev/vendors/angular-mocks/angular-mocks.js',
