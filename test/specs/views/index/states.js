@@ -16,7 +16,7 @@ describe('State: index', function () {
         expect(config.abstract).toBeTruthy();
     });
 
-    it('should load index.index state', function () {
+    it('should load the index.index state', function () {
         var state = 'index.index',
             config = $state.get(state);
 

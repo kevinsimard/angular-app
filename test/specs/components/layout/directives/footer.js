@@ -8,7 +8,7 @@ describe('Directive: uiFooter', function () {
         $compile = _$compile_;
     }));
 
-    it('should load uiFooter directive as an attribute', function () {
+    it('should load the uiFooter directive as an attribute', function () {
         var element = $compile('<ui-footer></ui-footer>')($scope);
 
         $scope.$digest();
@@ -16,7 +16,7 @@ describe('Directive: uiFooter', function () {
         expect(element.scope).toEqual(jasmine.any(Function));
     });
 
-    it('should load uiFooter directive as an element', function () {
+    it('should load the uiFooter directive as an element', function () {
         var element = $compile('<div ui-footer></div>')($scope);
 
         $scope.$digest();

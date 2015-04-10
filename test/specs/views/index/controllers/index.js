@@ -11,7 +11,7 @@ describe('Controller: index.index', function () {
         });
     }));
 
-    it('should load index.index controller', function () {
+    it('should load the index.index controller', function () {
         //
     });
 });
