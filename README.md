@@ -73,6 +73,8 @@
     │       │           └── header.js
     │       ├── modules/
     │       │   └── lang/
+    │       │       ├── factories/
+    │       │       │   └── translate.js
     │       │       └── subscribers/
     │       │           └── locale.js
     │       └── views/
