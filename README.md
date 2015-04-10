@@ -71,6 +71,10 @@
     │       │       └── directives/
     │       │           ├── footer.js
     │       │           └── header.js
+    │       ├── modules/
+    │       │   └── lang/
+    │       │       └── subscribers/
+    │       │           └── locale.js
     │       └── views/
     │           └── index/
     │               ├── controllers/
