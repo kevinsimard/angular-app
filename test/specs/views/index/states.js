@@ -8,14 +8,6 @@ describe('State: index', function () {
         $state = _$state_;
     }));
 
-    it('should load index abstract state', function () {
-        var state = 'index',
-            config = $state.get(state);
-
-        expect(config.url).toEqual('/');
-        expect(config.abstract).toBeTruthy();
-    });
-
     it('should load the index.index state', function () {
         var state = 'index.index',
             config = $state.get(state);
