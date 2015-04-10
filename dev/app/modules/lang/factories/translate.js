@@ -12,7 +12,7 @@
     ];
 
     function factory($timeout, $translate, $translatePartialLoader, constants) {
-        var promise;
+        var locale = constants.locale;
 
         function has(part) {
             return $translatePartialLoader.isPartAvailable(part);
@@ -27,24 +27,24 @@
             $translatePartialLoader.deletePart(part, true);
         }
 
-        function setLocale(locale) {
-            if ( ! _.contains(constants.locales, locale)) {
-                locale = constants.locale;
+        function setLocale(lang) {
+            if ( ! _.contains(constants.locales, lang)) {
+                lang = constants.locale;
             }
 
-            return (promise = $translate.use(locale));
+            return $translate.use((locale = lang));
         }
 
         function getLocale() {
-            return promise;
+            return locale;
         }
 
         return {
             'has': has,
             'add': add,
             'remove': remove,
-            'setLocale': setLocale,
-            'getLocale': getLocale
+            'getLocale': getLocale,
+            'setLocale': setLocale
         };
     }
 })(angular, _);
