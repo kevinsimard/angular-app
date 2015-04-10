@@ -14,17 +14,17 @@
     function factory($timeout, $translate, $translatePartialLoader, constants) {
         var promise;
 
+        function has(part) {
+            return $translatePartialLoader.isPartAvailable(part);
+        }
+
         function add(part) {
-            if (_.isString(part) && ! _.isEmpty(part)) {
-                $translatePartialLoader.addPart(part);
-                $timeout($translate.refresh);
-            }
+            $translatePartialLoader.addPart(part);
+            $timeout($translate.refresh);
         }
 
         function remove(part) {
-            if (_.isString(part) && ! _.isEmpty(part)) {
-                $translatePartialLoader.deletePart(part, true);
-            }
+            $translatePartialLoader.deletePart(part, true);
         }
 
         function setLocale(locale) {
@@ -40,6 +40,7 @@
         }
 
         return {
+            'has': has,
             'add': add,
             'remove': remove,
             'setLocale': setLocale,
