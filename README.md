@@ -123,3 +123,6 @@ gulp www
     ├── karma.conf.js
     ├── package.json
     └── README.md
+
+## License
+This structure is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
