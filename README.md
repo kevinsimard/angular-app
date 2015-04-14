@@ -4,7 +4,7 @@
 [![Dependency Status](https://david-dm.org/kevinsimard/angular-app.svg)](https://david-dm.org/kevinsimard/angular-app)
 [![devDependency Status](https://david-dm.org/kevinsimard/angular-app/dev-status.svg)](https://david-dm.org/kevinsimard/angular-app#info=devDependencies)
 
-## Install Dependencies
+## Installation
 > This structure utilizes [Npm](https://docs.npmjs.com/getting-started/installing-node) and [Bower](http://bower.io/#install-bower) to manage its dependencies. So, before using it, you will need to make sure you have both of them installed on your machine.
 
 Once installed, run the following commands to install the dependencies.
@@ -12,6 +12,24 @@ Once installed, run the following commands to install the dependencies.
 npm install
 bower install
 ```
+
+## Gulp Tasks
+
+**_Developement environment(s)_**
+```bash
+gulp dev
+```
+> The following options are available:
+* **_--watch_**: Rerun subtasks when a file changes
+* **_--env=\<ENV>_**: Override default configuration file
+
+**_Production environment(s)_**
+```bash
+gulp www
+```
+
+> The following options are available:
+* **_--env=\<ENV>_**: Override default configuration file
 
 ## Code Structure
     ┌── dev/
