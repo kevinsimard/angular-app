@@ -2,6 +2,7 @@
     'use strict';
 
     var gulp = require('gulp'),
+        karma = require('karma').server,
         requireDir = require('require-dir'),
         runSequence = require('run-sequence'),
         taskListing = require('gulp-task-listing');
@@ -29,6 +30,17 @@
             'minify:www',
             callback
         );
+    });
+
+    // run unit tests
+    gulp.task('test', [
+        'constant:generate',
+        'template:generate'
+    ], function () {
+        karma.start({
+            'singleRun': true,
+            'configFile': __dirname + '/karma.conf.js'
+        });
     });
 
     // list all available tasks

@@ -14,7 +14,6 @@ bower install
 ```
 
 ## Gulp Tasks
-
 **_Developement environment(s)_**
 ```bash
 gulp dev
@@ -30,6 +29,11 @@ gulp www
 
 > The following options are available:
 * **_--env=\<ENV>_**: Override default configuration file
+
+## Unit Tests
+**_Note_**: Make sure that dependencies are installed (`npm install`).
+
+The *unit tests* are available with `npm test` which is actually a shortcut for `gulp test`.
 
 ## Code Structure
     ┌── dev/
