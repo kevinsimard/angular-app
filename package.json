@@ -19,7 +19,7 @@
         "gulp-usemin": "0.3.*",
         "jshint-stylish": "1.0.*",
         "karma": "0.12.*",
-        "karma-coverage": "0.2.*",
+        "karma-coverage": "0.3.*",
         "karma-jasmine": "0.3.*",
         "karma-phantomjs-launcher": "0.1.*",
         "q": "1.2.*",
@@ -30,7 +30,7 @@
     },
     "devDependencies": {
         "browser-sync": "2.6.*",
-        "connect-history-api-fallback": "1.0.*",
+        "connect-history-api-fallback": "1.1.*",
         "gulp-watch": "4.2.*"
     }
 }
