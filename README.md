@@ -125,6 +125,7 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     ├── bower.json
     ├── gulpfile.js
     ├── karma.conf.js
+    ├── LICENSE.txt
     ├── package.json
     └── README.md
 
