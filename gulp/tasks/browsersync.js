@@ -17,17 +17,18 @@
     });
 
     function task() {
-        var browserSync = require('browser-sync'),
-            historyApiFallback = require('connect-history-api-fallback');
+        var spa = require("browser-sync-spa"),
+            browserSync = require('browser-sync');
+
+        browserSync.use(spa({
+            'selector': '[ng-app]'
+        }));
 
         return browserSync({
             'open': false,
             'port': '5000',
             'ui': { 'port': '5001' },
-            'server': {
-                'baseDir': 'dev',
-                'middleware': [historyApiFallback]
-            }
+            'server': { 'baseDir': 'dev' }
         });
     }
 })(require);
