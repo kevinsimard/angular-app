@@ -24,7 +24,7 @@
         "karma-phantomjs-launcher": "0.1.*",
         "q": "1.2.*",
         "require-dir": "0.3.*",
-        "run-sequence": "1.0.*",
+        "run-sequence": "1.1.*",
         "underscore": "1.8.*",
         "yargs": "3.7.*"
     },
