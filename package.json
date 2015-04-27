@@ -26,7 +26,7 @@
         "require-dir": "0.3.*",
         "run-sequence": "1.1.*",
         "underscore": "1.8.*",
-        "yargs": "3.7.*"
+        "yargs": "3.8.*"
     },
     "devDependencies": {
         "browser-sync": "2.6.*",
