@@ -17,7 +17,7 @@
     });
 
     function task() {
-        var spa = require("browser-sync-spa"),
+        var spa = require('browser-sync-spa'),
             browserSync = require('browser-sync');
 
         browserSync.use(spa({
