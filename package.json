@@ -29,7 +29,7 @@
         "yargs": "3.8.*"
     },
     "devDependencies": {
-        "browser-sync": "2.6.*",
+        "browser-sync": "2.7.*",
         "browser-sync-spa": "1.0.*",
         "gulp-watch": "4.2.*"
     }
