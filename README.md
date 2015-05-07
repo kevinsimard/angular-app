@@ -1,6 +1,6 @@
 # AngularJS Application Structure
 [![Build Status](https://travis-ci.org/kevinsimard/angular-app.svg)](https://travis-ci.org/kevinsimard/angular-app)
-[![Coverage Status](https://coveralls.io/repos/kevinsimard/angular-app/badge.svg)](https://coveralls.io/r/kevinsimard/angular-app)
+[![Test Coverage](https://codeclimate.com/github/kevinsimard/angular-app/badges/coverage.svg)](https://codeclimate.com/github/kevinsimard/angular-app/coverage)
 [![Dependency Status](https://david-dm.org/kevinsimard/angular-app.svg)](https://david-dm.org/kevinsimard/angular-app)
 [![devDependency Status](https://david-dm.org/kevinsimard/angular-app/dev-status.svg)](https://david-dm.org/kevinsimard/angular-app#info=devDependencies)
 [![Code Climate](https://codeclimate.com/github/kevinsimard/angular-app/badges/gpa.svg)](https://codeclimate.com/github/kevinsimard/angular-app)
