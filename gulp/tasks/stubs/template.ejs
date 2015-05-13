@@ -9,6 +9,6 @@
     ];
 
     function run($templateCache) {<% templates.forEach(function (template) { %>
-        $templateCache.put('<%- template.file %>', '<%= template.contents %>');<% }); %>
+        $templateCache.put('<%- template.file %>', '<%- template.contents %>');<% }); %>
     }
 })(angular);
