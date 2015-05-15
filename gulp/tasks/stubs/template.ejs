@@ -8,7 +8,12 @@
         '$templateCache'
     ];
 
+    function htmlDecode(value) {
+        return angular.element('<div/>')
+            .html(value).text();
+    }
+
     function run($templateCache) {<% templates.forEach(function (template) { %>
-        $templateCache.put('<%- template.file %>', '<%- template.contents %>');<% }); %>
+        $templateCache.put('<%- template.file %>', htmlDecode('<%= template.contents %>'));<% }); %>
     }
 })(angular);
