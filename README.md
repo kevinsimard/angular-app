@@ -22,6 +22,7 @@ gulp dev
 > The following options are available:
 * **_--watch_**: Rerun subtasks when a file changes
 * **_--env=\<ENV>_**: Override default configuration file
+* **_--serve_**: Built-in static server for basic HTML/JS/CSS websites
 
 **_Production environment(s)_**
 ```bash
