@@ -18,21 +18,24 @@
     function task(callback) {
         var constants = getConstants(argv.env);
 
-        gulp.src('gulp/tasks/stubs/constant.ejs')
+        var stream = gulp.src('gulp/tasks/stubs/constant.ejs')
             .pipe(plugins.ejs({ 'constants': constants }))
             .pipe(plugins.rename('constants.js'))
-            .pipe(gulp.dest('dev/app/'))
-            .on('end', callback);
+            .pipe(gulp.dest('dev/app/'));
+
+        if (typeof callback === 'function') {
+            stream.on('end', callback);
+        }
     }
 
     function getConstants(env) {
         var constants = readJsonFileSync('.env.json'),
             envFile = ['.env.', env, '.json'].join('');
 
-        if (fs.exists(envFile)) {
+        try {
             constants = _.extend(constants,
                 readJsonFileSync(envFile));
-        }
+        } catch (error) {}
 
         return _.map(constants, function (value, key) {
             return { 'key': key, 'value': JSON.stringify(value) };
