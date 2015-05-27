@@ -11,15 +11,10 @@
 
     function run($rootScope, translate) {
         $rootScope.$on('$stateChangeSuccess',
-            function (event, toState, toParams, fromState, fromParams) {
-                var locale = toParams._locale,
-                    toPart = _.first(toState.name.split('.')),
-                    fromPart = _.first(fromState.name.split('.'));
+            function (event, toState, toParams) {
+                var locale = toParams._locale;
 
                 translate.setLocale(locale);
-
-                if ( ! _.isEmpty(fromPart)) { translate.remove(fromPart); }
-                if ( ! _.isEmpty(toPart)) { translate.add(toPart); }
             });
     }
 })(angular, _);

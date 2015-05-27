@@ -14,6 +14,7 @@
     gulp.task('dev', function (callback) {
         runSequence(
             ['constant:generate',
+            'locale:generate',
             'template:generate'],
             'browsersync:serve',
             'jshint:validate',
@@ -25,6 +26,7 @@
     gulp.task('www', ['copy:www'], function (callback) {
         runSequence(
             ['constant:generate',
+            'locale:generate',
             'template:generate'],
             'jshint:validate',
             'minify:www',
@@ -35,6 +37,7 @@
     // run unit tests
     gulp.task('test', [
         'constant:generate',
+        'locale:generate',
         'template:generate'
     ], function () {
         karma.start({

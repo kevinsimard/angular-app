@@ -1,0 +1,14 @@
+(function (angular) {
+    'use strict';
+
+    angular.module('mlang')
+        .config(config);
+
+    config.$inject = [
+        '$translateProvider'
+    ];
+
+    function config($translateProvider) {<% locales.forEach(function (locale) { %>
+        $translateProvider.translations('<%- locale.file %>', <%- locale.contents %>);<% }); %>
+    }
+})(angular);

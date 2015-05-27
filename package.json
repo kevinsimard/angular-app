@@ -8,6 +8,7 @@
         "gulp": "3.8.*",
         "gulp-ejs": "1.1.*",
         "gulp-jshint": "1.10.*",
+        "gulp-jsonminify": "1.0.*",
         "gulp-load-plugins": "0.10.*",
         "gulp-minify-css": "1.1.*",
         "gulp-minify-html": "1.0.*",

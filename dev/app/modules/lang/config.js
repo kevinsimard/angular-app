@@ -6,11 +6,10 @@
 
     config.$inject = [
         '$injector',
-        '$translateProvider',
         '$stateProvider'
     ];
 
-    function config($injector, $translateProvider, $stateProvider) {
+    function config($injector, $stateProvider) {
         var originalUrlDecorator = $stateProvider.decorator('url');
 
         $stateProvider.decorator('url', function (state) {
@@ -27,10 +26,6 @@
             }
 
             return originalUrlDecorator(state);
-        });
-
-        $translateProvider.useLoader('$translatePartialLoader', {
-            'urlTemplate': 'assets/locales/{lang}/{part}.json'
         });
     }
 })(angular);

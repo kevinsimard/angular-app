@@ -51,9 +51,12 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     │   │   ├── modules/
     │   │   │   └── lang/
     │   │   │       ├── factories/
-    │   │   │       │   └── localisation.js
+    │   │   │       │   └── translate.js
+    │   │   │       ├── locales/
+    │   │   │       │   └── en.json
     │   │   │       ├── subscribers/
     │   │   │       │   └── locale.js
+    │   │   │       ├── .gitignore
     │   │   │       ├── config.js
     │   │   │       └── module.js
     │   │   ├── views/
@@ -74,9 +77,6 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     │   │   │   └── .gitkeep
     │   │   ├── images/
     │   │   │   └── .gitkeep
-    │   │   ├── locales/
-    │   │   │   └── en/
-    │   │   │       └── index.json
     │   │   ├── scripts/
     │   │   │   └── .gitkeep
     │   │   └── styles/
@@ -89,11 +89,13 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     │   └── tasks/
     │       ├── stubs/
     │       │   ├── constant.ejs
+    │       │   ├── locale.ejs
     │       │   └── template.ejs
     │       ├── browsersync.js
     │       ├── constant.js
     │       ├── copy.js
     │       ├── jshint.js
+    │       ├── locale.js
     │       ├── minify.js
     │       └── template.js
     ├── test/
@@ -123,6 +125,7 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     ├── .env.json
     ├── .gitattributes
     ├── .gitignore
+    ├── .jshintrc
     ├── .travis.yml
     ├── bower.json
     ├── gulpfile.js
