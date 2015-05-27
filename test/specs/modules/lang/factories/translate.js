@@ -1,5 +1,5 @@
 describe('Factory: translate', function () {
-    var $translatePartialLoader, translate, constants;
+    var translate, constants;
 
     beforeEach(module('mlang'));
     beforeEach(module('app'));
