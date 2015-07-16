@@ -2,7 +2,7 @@
     'use strict';
 
     var gulp = require('gulp'),
-        karma = require('karma').server,
+        karmaServer = require('karma').Server,
         requireDir = require('require-dir'),
         runSequence = require('run-sequence'),
         taskListing = require('gulp-task-listing');
@@ -40,10 +40,10 @@
         'locale:generate',
         'template:generate'
     ], function () {
-        karma.start({
+        new karmaServer({
             'singleRun': true,
             'configFile': __dirname + '/karma.conf.js'
-        });
+        }).start();
     });
 
     // list all available tasks
