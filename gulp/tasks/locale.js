@@ -10,7 +10,7 @@
     gulp.task('locale:generate', function (callback) {
         task(callback);
 
-        if ( !! argv.watch) {
+        if (!!argv.watch) {
             plugins.watch('dev/app/modules/lang/locales/*.json', task);
         }
     });
@@ -19,7 +19,7 @@
         getLocales()
             .then(function (locales) {
                 gulp.src('gulp/tasks/stubs/locale.ejs')
-                    .pipe(plugins.ejs({ 'locales': locales }))
+                    .pipe(plugins.ejs({ locales: locales }))
                     .pipe(plugins.rename('locales.js'))
                     .pipe(gulp.dest('dev/app/modules/lang/'))
                     .on('end', callback);
@@ -40,8 +40,8 @@
         function stream() {
             return es.map(function (file, callback) {
                 locales.push({
-                    'file': file.relative.replace('.json', ''),
-                    'contents': file.contents.toString()
+                    file: file.relative.replace('.json', ''),
+                    contents: file.contents.toString()
                 });
 
                 callback();

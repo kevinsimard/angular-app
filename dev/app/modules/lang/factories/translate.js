@@ -21,7 +21,7 @@
         }
 
         function setLocale(lang) {
-            if ( ! _.contains(constants.locales, lang)) {
+            if (!_.contains(constants.locales, lang)) {
                 lang = constants.locale;
             }
 
@@ -29,9 +29,9 @@
         }
 
         return {
-            'get': get,
-            'getLocale': getLocale,
-            'setLocale': setLocale
+            get: get,
+            getLocale: getLocale,
+            setLocale: setLocale
         };
     }
 })(angular, _);

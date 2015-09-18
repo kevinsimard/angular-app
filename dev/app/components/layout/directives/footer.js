@@ -8,9 +8,9 @@
 
     function directive() {
         return {
-            'link': link,
-            'restrict': 'AE',
-            'templateUrl': 'components/layout/templates/footer.tpl'
+            link: link,
+            restrict: 'AE',
+            templateUrl: 'components/layout/templates/footer.tpl'
         };
 
         function link(scope, element, attrs) {

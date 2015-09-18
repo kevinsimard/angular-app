@@ -10,7 +10,7 @@
     gulp.task('constant:generate', function (callback) {
         task(callback);
 
-        if ( !! argv.watch) {
+        if (!!argv.watch) {
             plugins.watch(['.env.json', '.env.*.json'], task);
         }
     });
@@ -19,7 +19,7 @@
         var constants = getConstants(argv.env);
 
         var stream = gulp.src('gulp/tasks/stubs/constant.ejs')
-            .pipe(plugins.ejs({ 'constants': constants }))
+            .pipe(plugins.ejs({ constants: constants }))
             .pipe(plugins.rename('constants.js'))
             .pipe(gulp.dest('dev/app/'));
 
@@ -38,7 +38,7 @@
         } catch (error) {}
 
         return _.map(constants, function (value, key) {
-            return { 'key': key, 'value': JSON.stringify(value) };
+            return { key: key, value: JSON.stringify(value) };
         });
     }
 

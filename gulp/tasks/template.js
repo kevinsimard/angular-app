@@ -10,7 +10,7 @@
     gulp.task('template:generate', function (callback) {
         task(callback);
 
-        if ( !! argv.watch) {
+        if (!!argv.watch) {
             plugins.watch('dev/app/**/*.tpl', task);
         }
     });
@@ -19,7 +19,7 @@
         getTemplates()
             .then(function (templates) {
                 gulp.src('gulp/tasks/stubs/template.ejs')
-                    .pipe(plugins.ejs({ 'templates': templates }))
+                    .pipe(plugins.ejs({ templates: templates }))
                     .pipe(plugins.rename('templates.js'))
                     .pipe(gulp.dest('dev/app/'))
                     .on('end', callback);
@@ -31,7 +31,7 @@
             deferred = Q.defer();
 
         gulp.src('dev/app/**/*.tpl')
-            .pipe(plugins.minifyHtml({ 'empty': true }))
+            .pipe(plugins.minifyHtml({ empty: true }))
             .pipe(stream())
             .on('end', function () {
                 deferred.resolve(templates);
@@ -40,8 +40,8 @@
         function stream() {
             return es.map(function (file, callback) {
                 templates.push({
-                    'file': file.relative,
-                    'contents': file.contents.toString()
+                    file: file.relative,
+                    contents: file.contents.toString()
                 });
 
                 callback();

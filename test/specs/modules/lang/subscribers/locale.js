@@ -9,7 +9,7 @@ describe('Subscriber: locale', function () {
         $state = _$state_;
 
         translate = _$injector_.get('mlang.translate');
-        state = { 'name': 'index', 'url': '/', 'views': null };
-        abstractState = { 'abstract': true, 'name': '', 'url': '^', 'views': null };
+        state = { name: 'index', url: '/', views: null };
+        abstractState = { abstract: true, name: '', url: '^', views: null };
     }));
 });

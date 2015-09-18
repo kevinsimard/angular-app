@@ -41,8 +41,8 @@
         'template:generate'
     ], function () {
         new karmaServer({
-            'singleRun': true,
-            'configFile': __dirname + '/karma.conf.js'
+            singleRun: true,
+            configFile: __dirname + '/karma.conf.js'
         }).start();
     });
 

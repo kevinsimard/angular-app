@@ -8,10 +8,10 @@
 
     function task(callback) {
         var options = {
-            'jsApp': [plugins.uglify(), plugins.rev()],
-            'jsVendors': [plugins.uglify(), plugins.rev()],
-            'cssApp': [plugins.minifyCss(), 'concat', plugins.rev()],
-            'cssVendors': [plugins.minifyCss(), 'concat', plugins.rev()]
+            jsApp: [plugins.uglify(), plugins.rev()],
+            jsVendors: [plugins.uglify(), plugins.rev()],
+            cssApp: [plugins.minifyCss(), 'concat', plugins.rev()],
+            cssVendors: [plugins.minifyCss(), 'concat', plugins.rev()]
         };
 
         gulp.src('dev/index.html')

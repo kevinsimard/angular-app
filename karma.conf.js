@@ -1,21 +1,21 @@
 module.exports = function (config) {
     config.set({
-        'singleRun': true,
-        'reporters': ['dots', 'coverage'],
-        'browsers': ['PhantomJS'],
-        'frameworks': ['jasmine'],
-        'preprocessors': {
+        singleRun: true,
+        reporters: ['dots', 'coverage'],
+        browsers: ['PhantomJS'],
+        frameworks: ['jasmine'],
+        preprocessors: {
             'dev/app/**/*.js': ['coverage']
         },
-        'coverageReporter': {
-            'type': 'lcov',
-            'dir': 'test/coverage',
-            'subdir': '.'
+        coverageReporter: {
+            type: 'lcov',
+            dir: 'test/coverage',
+            subdir: '.'
         },
-        'exclude': [
+        exclude: [
             'dev/app/bootstrap.js'
         ],
-        'files': [
+        files: [
             'dev/vendors/angular/angular.js',
             'dev/vendors/angular-mocks/angular-mocks.js',
             'dev/vendors/angular-translate/angular-translate.js',
