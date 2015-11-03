@@ -2,7 +2,7 @@
     'use strict';
 
     var gulp = require('gulp'),
-        karmaServer = require('karma').Server,
+        KarmaServer = require('karma').Server,
         requireDir = require('require-dir'),
         runSequence = require('run-sequence'),
         taskListing = require('gulp-task-listing');
@@ -40,7 +40,7 @@
         'locale:generate',
         'template:generate'
     ], function () {
-        new karmaServer({
+        new KarmaServer({
             singleRun: true,
             configFile: __dirname + '/karma.conf.js'
         }).start();
