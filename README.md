@@ -38,88 +38,88 @@ gulp www
 The *unit tests* are available with `npm test` which is actually a shortcut for `gulp test`.
 
 ## Code Structure
-    ┌── dev/
-    │   ├── app/
-    │   │   ├── components/
-    │   │   │   └── layout/
-    │   │   │       ├── directives/
-    │   │   │       │   ├── footer.js
-    │   │   │       │   └── header.js
-    │   │   │       └── templates/
-    │   │   │           ├── footer.tpl
-    │   │   │           └── header.tpl
-    │   │   ├── modules/
-    │   │   │   └── lang/
-    │   │   │       ├── factories/
-    │   │   │       │   └── translate.js
-    │   │   │       ├── locales/
-    │   │   │       │   └── en.json
-    │   │   │       ├── subscribers/
-    │   │   │       │   └── locale.js
-    │   │   │       ├── .gitignore
-    │   │   │       ├── config.js
-    │   │   │       └── module.js
-    │   │   ├── views/
-    │   │   │   └── index/
-    │   │   │       ├── controllers/
-    │   │   │       │   └── index.js
-    │   │   │       ├── templates/
-    │   │   │       │   └── index.tpl
-    │   │   │       └── states.js
-    │   │   ├── .gitignore
-    │   │   ├── bootstrap.js
-    │   │   ├── module.js
-    │   │   └── states.js
-    │   ├── assets/
-    │   │   ├── docs/
-    │   │   │   └── .gitkeep
-    │   │   ├── fonts/
-    │   │   │   └── .gitkeep
-    │   │   ├── images/
-    │   │   │   └── .gitkeep
-    │   │   ├── scripts/
-    │   │   │   └── .gitkeep
-    │   │   └── styles/
-    │   │       └── .gitkeep
-    │   ├── .gitignore
-    │   ├── .htaccess
-    │   ├── favicon.ico
-    │   └── index.html
-    ├── gulp/
-    │   └── tasks/
-    │       ├── stubs/
-    │       │   ├── constant.ejs
-    │       │   ├── locale.ejs
-    │       │   └── template.ejs
-    │       ├── browsersync.js
-    │       ├── constant.js
-    │       ├── copy.js
-    │       ├── jshint.js
-    │       ├── locale.js
-    │       ├── minify.js
-    │       └── template.js
-    ├── test/
-    │   ├── coverage/
-    │   │   └── .gitignore
-    │   └── specs/
-    │       ├── components/
-    │       │   └── layout/
-    │       │       └── directives/
-    │       │           ├── footer.js
-    │       │           └── header.js
-    │       ├── modules/
-    │       │   └── lang/
-    │       │       ├── factories/
-    │       │       │   └── translate.js
-    │       │       └── subscribers/
-    │       │           └── locale.js
-    │       └── views/
-    │           └── index/
-    │               ├── controllers/
-    │               │   └── index.js
-    │               └── states.js
-    ├── www/
-    │   └── .gitignore
+    ├── dev
+    │   ├── app
+    │   │   ├── components
+    │   │   │   └── layout
+    │   │   │       ├── directives
+    │   │   │       │   ├── footer.js
+    │   │   │       │   └── header.js
+    │   │   │       └── templates
+    │   │   │           ├── footer.tpl
+    │   │   │           └── header.tpl
+    │   │   ├── modules
+    │   │   │   └── lang
+    │   │   │       ├── factories
+    │   │   │       │   └── translate.js
+    │   │   │       ├── locales
+    │   │   │       │   └── en.json
+    │   │   │       ├── subscribers
+    │   │   │       │   └── locale.js
+    │   │   │       ├── .gitignore
+    │   │   │       ├── config.js
+    │   │   │       └── module.js
+    │   │   ├── views
+    │   │   │   └── index
+    │   │   │       ├── controllers
+    │   │   │       │   └── index.js
+    │   │   │       ├── templates
+    │   │   │       │   └── index.tpl
+    │   │   │       └── states.js
+    │   │   ├── .gitignore
+    │   │   ├── bootstrap.js
+    │   │   ├── module.js
+    │   │   └── states.js
+    │   ├── assets
+    │   │   ├── docs
+    │   │   │   └── .gitkeep
+    │   │   ├── fonts
+    │   │   │   └── .gitkeep
+    │   │   ├── images
+    │   │   │   └── .gitkeep
+    │   │   ├── scripts
+    │   │   │   └── .gitkeep
+    │   │   └── styles
+    │   │       └── .gitkeep
+    │   ├── .gitignore
+    │   ├── .htaccess
+    │   ├── favicon.ico
+    │   └── index.html
+    ├── gulp
+    │   └── tasks
+    │       ├── stubs
+    │       │   ├── constant.ejs
+    │       │   ├── locale.ejs
+    │       │   └── template.ejs
+    │       ├── browsersync.js
+    │       ├── constant.js
+    │       ├── copy.js
+    │       ├── jshint.js
+    │       ├── locale.js
+    │       ├── minify.js
+    │       └── template.js
+    ├── test
+    │   ├── coverage
+    │   │   └── .gitignore
+    │   └── specs
+    │       ├── components
+    │       │   └── layout
+    │       │       └── directives
+    │       │           ├── footer.js
+    │       │           └── header.js
+    │       ├── modules
+    │       │   └── lang
+    │       │       ├── factories
+    │       │       │   └── translate.js
+    │       │       └── subscribers
+    │       │           └── locale.js
+    │       └── views
+    │           └── index
+    │               ├── controllers
+    │               │   └── index.js
+    │               └── states.js
+    ├── www
+    │   └── .gitignore
     ├── .bowerrc
     ├── .env.example
     ├── .env.json
@@ -127,8 +127,8 @@ The *unit tests* are available with `npm test` which is actually a shortcut for 
     ├── .gitignore
     ├── .jshintrc
     ├── .travis.yml
+    ├── README.md
     ├── bower.json
     ├── gulpfile.js
     ├── karma.conf.js
-    ├── package.json
-    └── README.md
+    └── package.json
