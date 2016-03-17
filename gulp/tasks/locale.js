@@ -10,7 +10,7 @@
     gulp.task('locale:generate', function (callback) {
         task(callback);
 
-        if (!!argv.watch) {
+        if (!! argv.watch) {
             plugins.watch('dev/app/modules/lang/locales/*.json', task);
         }
     });

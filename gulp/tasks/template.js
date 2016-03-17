@@ -10,7 +10,7 @@
     gulp.task('template:generate', function (callback) {
         task(callback);
 
-        if (!!argv.watch) {
+        if (!! argv.watch) {
             plugins.watch('dev/app/**/*.tpl', task);
         }
     });

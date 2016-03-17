@@ -10,7 +10,7 @@
     gulp.task('constant:generate', function (callback) {
         task(callback);
 
-        if (!!argv.watch) {
+        if (!! argv.watch) {
             plugins.watch(['.env.json', '.env.*.json'], task);
         }
     });

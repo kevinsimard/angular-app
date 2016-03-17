@@ -6,10 +6,10 @@
         plugins = require('gulp-load-plugins')();
 
     gulp.task('browsersync:serve', function () {
-        if (!!argv.serve) {
+        if (!! argv.serve) {
             var browserSync = task();
 
-            if (!!argv.watch) {
+            if (!! argv.watch) {
                 plugins.watch('dev/index.html', browserSync.reload);
                 plugins.watch('dev/assets/locales/**/*', browserSync.reload);
                 plugins.watch('dev/assets/styles/**/*.css', browserSync.reload);

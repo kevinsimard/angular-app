@@ -9,7 +9,7 @@
     gulp.task('jshint:validate', function () {
         task();
 
-        if (!!argv.watch) {
+        if (!! argv.watch) {
             plugins.watch('dev/app/**/*.js', task);
         }
     });
