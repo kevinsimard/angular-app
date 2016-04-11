@@ -4,7 +4,6 @@
 [![Test Coverage](https://codeclimate.com/github/kevinsimard/angular-app/badges/coverage.svg)](https://codeclimate.com/github/kevinsimard/angular-app/coverage)
 [![Dependency Status](https://david-dm.org/kevinsimard/angular-app.svg)](https://david-dm.org/kevinsimard/angular-app)
 [![devDependency Status](https://david-dm.org/kevinsimard/angular-app/dev-status.svg)](https://david-dm.org/kevinsimard/angular-app#info=devDependencies)
-[![Code Climate](https://codeclimate.com/github/kevinsimard/angular-app/badges/gpa.svg)](https://codeclimate.com/github/kevinsimard/angular-app)
 
 ## Installation
 
