@@ -1,8 +1,8 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('mlang', [
-        'pascalprecht.translate',
-        'ui.router'
+    angular.module("mlang", [
+        "pascalprecht.translate",
+        "ui.router"
     ]);
 })(angular);

@@ -1,26 +1,26 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('app')
+    angular.module("app")
         .config(config);
 
     config.$inject = [
-        '$stateProvider'
+        "$stateProvider"
     ];
 
     function config($stateProvider) {
-        $stateProvider.state('index', {
-            url: '/',
+        $stateProvider.state("index", {
+            url: "/",
             abstract: true
         });
 
-        $stateProvider.state('index.index', {
-            url: '',
+        $stateProvider.state("index.index", {
+            url: "",
             views: {
-                '@': {
-                    controllerAs: 'vm',
-                    controller: 'index.index',
-                    templateUrl: 'views/index/templates/index.tpl'
+                "@": {
+                    controllerAs: "vm",
+                    controller: "index.index",
+                    templateUrl: "views/index/templates/index.tpl"
                 }
             }
         });

@@ -1,8 +1,8 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('app')
-        .controller('index.index', controller);
+    angular.module("app")
+        .controller("index.index", controller);
 
     controller.$inject = [];
 

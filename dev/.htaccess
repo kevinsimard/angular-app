@@ -4,10 +4,10 @@
 
 RewriteEngine on
 
-# don't rewrite resource files
+# don"t rewrite resource files
 RewriteCond %{REQUEST_URI} !^/?assets/
 
-# don't rewrite existing files or directories
+# don"t rewrite existing files or directories
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 

@@ -1,12 +1,12 @@
 (function (angular, _) {
-    'use strict';
+    "use strict";
 
-    angular.module('mlang')
-        .factory('mlang.translate', factory);
+    angular.module("mlang")
+        .factory("mlang.translate", factory);
 
     factory.$inject = [
-        '$translate',
-        'constants'
+        "$translate",
+        "constants"
     ];
 
     function factory($translate, constants) {

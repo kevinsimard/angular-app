@@ -1,28 +1,28 @@
 (function (require) {
-    'use strict';
+    "use strict";
 
-    var Q = require('q'),
-        gulp = require('gulp'),
-        es = require('event-stream'),
-        argv = require('yargs').argv,
-        plugins = require('gulp-load-plugins')();
+    var Q = require("q"),
+        gulp = require("gulp"),
+        es = require("event-stream"),
+        argv = require("yargs").argv,
+        plugins = require("gulp-load-plugins")();
 
-    gulp.task('template:generate', function (callback) {
+    gulp.task("template:generate", function (callback) {
         task(callback);
 
         if (!! argv.watch) {
-            plugins.watch('dev/app/**/*.tpl', task);
+            plugins.watch("dev/app/**/*.tpl", task);
         }
     });
 
     function task(callback) {
         getTemplates()
             .then(function (templates) {
-                gulp.src('gulp/tasks/stubs/template.ejs')
+                gulp.src("gulp/tasks/stubs/template.ejs")
                     .pipe(plugins.ejs({ templates: templates }))
-                    .pipe(plugins.rename('templates.js'))
-                    .pipe(gulp.dest('dev/app/'))
-                    .on('end', callback);
+                    .pipe(plugins.rename("templates.js"))
+                    .pipe(gulp.dest("dev/app/"))
+                    .on("end", callback);
             });
     }
 
@@ -30,10 +30,10 @@
         var templates = [],
             deferred = Q.defer();
 
-        gulp.src('dev/app/**/*.tpl')
+        gulp.src("dev/app/**/*.tpl")
             .pipe(plugins.minifyHtml({ empty: true }))
             .pipe(stream())
-            .on('end', function () {
+            .on("end", function () {
                 deferred.resolve(templates);
             });
 

@@ -1,8 +1,8 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('app')
-        .constant('constants', {<% constants.forEach(function (constant, index) { %>
-            '<%- constant.key %>': <%- constant.value %><%= (index != constants.length - 1) ? ',' : '' %><% }); %>
+    angular.module("app")
+        .constant("constants", {<% constants.forEach(function (constant, index) { %>
+            "<%- constant.key %>": <%- constant.value %><%= (index != constants.length - 1) ? "," : "" %><% }); %>
         });
 })(angular);

@@ -1,14 +1,14 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('mlang')
+    angular.module("mlang")
         .config(config);
 
     config.$inject = [
-        '$translateProvider'
+        "$translateProvider"
     ];
 
     function config($translateProvider) {<% locales.forEach(function (locale) { %>
-        $translateProvider.translations('<%- locale.file %>', <%- locale.contents %>);<% }); %>
+        $translateProvider.translations("<%- locale.file %>", <%- locale.contents %>);<% }); %>
     }
 })(angular);

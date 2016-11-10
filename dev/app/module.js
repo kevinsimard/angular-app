@@ -1,8 +1,8 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('app', [
-        'ui.router',
-        'mlang'
+    angular.module("app", [
+        "ui.router",
+        "mlang"
     ]);
 })(angular);

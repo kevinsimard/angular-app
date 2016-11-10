@@ -1,28 +1,28 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('mlang')
+    angular.module("mlang")
         .config(config);
 
     config.$inject = [
-        '$injector',
-        '$stateProvider'
+        "$injector",
+        "$stateProvider"
     ];
 
     function config($injector, $stateProvider) {
-        var originalUrlDecorator = $stateProvider.decorator('url');
+        var originalUrlDecorator = $stateProvider.decorator("url");
 
-        $stateProvider.decorator('url', function (state) {
-            var constants = $injector.get('constants');
+        $stateProvider.decorator("url", function (state) {
+            var constants = $injector.get("constants");
 
-            if (angular.equals(state.url, '/')) {
-                state.url = '?/';
+            if (angular.equals(state.url, "/")) {
+                state.url = "?/";
             }
 
             if (state.abstract) {
-                state.url = ['/{_locale:(?:',
-                    constants.locales.join('|'),
-                    ')?}', state.url].join('');
+                state.url = ["/{_locale:(?:",
+                    constants.locales.join("|"),
+                    ")?}", state.url].join("");
             }
 
             return originalUrlDecorator(state);

@@ -1,16 +1,16 @@
 (function (angular, _) {
-    'use strict';
+    "use strict";
 
-    angular.module('mlang')
+    angular.module("mlang")
         .run(run);
 
     run.$inject = [
-        '$rootScope',
-        'mlang.translate'
+        "$rootScope",
+        "mlang.translate"
     ];
 
     function run($rootScope, translate) {
-        $rootScope.$on('$stateChangeSuccess',
+        $rootScope.$on("$stateChangeSuccess",
             function (event, toState, toParams) {
                 var locale = toParams._locale;
 

@@ -1,19 +1,19 @@
 (function (angular) {
-    'use strict';
+    "use strict";
 
-    angular.module('app')
+    angular.module("app")
         .run(run);
 
     run.$inject = [
-        '$templateCache'
+        "$templateCache"
     ];
 
     function htmlDecode(value) {
-        return angular.element('<div/>')
+        return angular.element("<div/>")
             .html(value).text();
     }
 
     function run($templateCache) {<% templates.forEach(function (template) { %>
-        $templateCache.put('<%- template.file %>', htmlDecode('<%= template.contents %>'));<% }); %>
+        $templateCache.put("<%- template.file %>", htmlDecode("<%= template.contents %>"));<% }); %>
     }
 })(angular);
