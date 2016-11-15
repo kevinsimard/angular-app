@@ -11,8 +11,8 @@
 Once installed, run the following commands to install the dependencies.
 
 ```bash
-npm install
-bower install
+$ npm install
+$ bower install
 ```
 
 ## Gulp Tasks
@@ -20,7 +20,7 @@ bower install
 **_Developement environment(s)_**
 
 ```bash
-gulp dev
+$ gulp dev
 ```
 
 > The following options are available:
@@ -31,7 +31,7 @@ gulp dev
 **_Production environment(s)_**
 
 ```bash
-gulp www
+$ gulp www
 ```
 
 > The following options are available:
@@ -39,9 +39,9 @@ gulp www
 
 ## Unit Tests
 
-**_Note_**: Make sure that dependencies are installed (`npm install`).
+**_Note_**: Make sure that dependencies are installed (`$ npm install`).
 
-The *unit tests* are available with `npm test` which is actually a shortcut for `gulp test`.
+The *unit tests* are available with `$ npm test` which is actually a shortcut for `$ gulp test`.
 
 ## Code Structure
 
