@@ -135,6 +135,7 @@ The *unit tests* are available with `$ npm test` which is actually a shortcut fo
     ├── .gitignore
     ├── .jshintrc
     ├── .travis.yml
+    ├── LICENSE.md
     ├── README.md
     ├── bower.json
     ├── gulpfile.js
